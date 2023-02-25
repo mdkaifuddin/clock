@@ -1,4 +1,4 @@
-let userpm = confirm("Click OK for PM else cancel");
+let userpm = confirm("Click OK for PM , Cancel for AM");
 let hour = prompt('Enter the hour ');
 let min = prompt('Enter the min ');
 let sec = prompt('Enter the sec ');
@@ -10,11 +10,27 @@ else {
     var pm = false;
     document.getElementById('ampm').innerHTML = 'AM';
 }
-document.getElementById('hour').innerHTML = hour;
-document.getElementById('min').innerHTML = min;
-document.getElementById('sec').innerHTML = sec;
 
+if (hour <= 0 || hour > 12) {
+    console.log('Invalid hour')
+}
+else {
+    document.getElementById('hour').innerHTML = hour;
+}
 
+if (min > 60 || min < 0) {
+    console.log('Invalid minute')
+}
+else {
+    document.getElementById('min').innerHTML = min;
+}
+
+if (sec > 60 || sec < 0) {
+    console.log('Invalid second')
+}
+else {
+    document.getElementById('sec').innerHTML = sec;
+}
 let time = function () {
     let hour = document.getElementById('hour');
     let min = document.getElementById('min');
