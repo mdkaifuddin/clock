@@ -1,17 +1,18 @@
+let userpm = confirm("Click OK for PM else cancel");
 let hour = prompt('Enter the hour ');
 let min = prompt('Enter the min ');
 let sec = prompt('Enter the sec ');
-var userpm = prompt('AM or PM');
-if (userpm == 'PM') {
+if (userpm) {
     var pm = true;
+    document.getElementById('ampm').innerHTML = 'PM';
 }
-else if (userpm == 'AM') {
+else {
     var pm = false;
+    document.getElementById('ampm').innerHTML = 'AM';
 }
 document.getElementById('hour').innerHTML = hour;
 document.getElementById('min').innerHTML = min;
 document.getElementById('sec').innerHTML = sec;
-document.getElementById('ampm').innerHTML = userpm;
 
 
 let time = function () {
